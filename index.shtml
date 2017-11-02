@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Common meta-tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Default webserver page" />
+    <meta name="author" content="Maxim Martyanov <web@llorephie.me>" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Stylesheets link-tags -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <title>
+        <!--#echo var="HOSTNAME" -->&middot; Default webserver page</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">Hello, explorer!</h1>
+            <p class="lead">This is a default webpage for host <code><!--#echo var="HOSTNAME" --></code>.</p>
+            <hr>
+            <p>There is some info about your session:</p>
+            <ul>
+                <li>Your IP address: <code><!--#echo var="REMOTE_ADDR" --></code>, port: <code><!--#echo var="REMOTE_PORT" --></code></li>
+                <li>Your hostname: <code><!--#echo var="REMOTE_HOST" --></code></li>
+                <li>Your request URI: <code><!--#echo var="REQUEST_URI" --></code> with method <code><!--#echo var="REQUEST_METHOD" --></code> via <code><!--#echo var="SERVER_PROTOCOL" --></code> at host <code><!--#echo var="SERVER_NAME" --></code>
+                    <!--#if expr="$HTTPS = on" -->with HTTPS <code><!--#echo var="HTTPS" --></code>, cipher <code><!--#echo var="SSL_CIPHER" --></code>, protocol <code><!--#echo var="SSL_PROTOCOL" --></code>
+                    <!--#else-->with HTTPS <code>off</code>
+                    <!--# endif -->
+                </li>
+                <li>You came to this webpage from <code><!--#echo var="HTTP_REFERER" --></code></li>
+                <li>Your browser: <code><!--#echo var="HTTP_USER_AGENT" --></code></li>
+            </ul>
+            <p>All information displayed above is only what you browser showed to this server.</p>
+            <hr>
+            <p>And there is some info about this server:</p>
+            <ul>
+                <li>Server address: <code><!--#echo var="SERVER_ADDR" --></code></li>
+                <li>Server port: <code><!--#echo var="SERVER_PORT" --></code></li>
+                <li>Server hostname: <code><!--#echo var="HOSTNAME" --></code></li>
+                <li>Server software: <code><!--#echo var="SERVER_SOFTWARE" --></code></li>
+                <li>Server protocol for this session: <code><!--#echo var="SERVER_PROTOCOL" --></code></li>
+                <li>Response status code: <code><!--#echo var="STATUS" --></code></li>
+                <li>Current date and time (when page was loaded): <code><!--#echo var="DATE_GMT" --></code></li>
+            </ul>
+            <hr>
+            <p>All information displayed above was reported by front-end server. No additional processing, data collection or anything else.</p>
+        </div>
+        <footer>
+            <hr>
+            <p>Created by <a href="https://llorephie.me/" rel="author">Maxim Llorephie</a> using SSI, Bootstrap 4 and hands. Page source available at <a href="https://github.com/llorephie/ssi-defaultpage">GitHub</a>.</p>
+        </footer>
+    </div>
+</body>
